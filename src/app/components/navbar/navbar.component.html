@@ -1,0 +1,27 @@
+<nav class="navbar">
+  <div class="logo">
+    LOGO
+  </div>
+  <ul class="nav-links">
+    <li *ngFor="let route of navLinks">
+      <a [routerLink]="route.path">{{ route.label }}</a>
+    </li>
+  </ul>
+  <div class="search-bar">
+    <input placeholder="search" type="text">
+  </div>
+  <div (click)="toggleMenu()" class="menu-button">
+    <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
+  </div>
+  <ng-template [ngIf]="isMenuOpen">
+    <div (click)="isMenuOpen=false" id="overlay"></div>
+    <ul [ngClass]="{'mobile-menu':isMenuOpen}" class="nav-links">
+      <li (click)="toggleMenu()" class="menu-button">
+        <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
+      </li>
+      <li (click)="isMenuOpen=false" *ngFor="let route of navLinks">
+        <a  [routerLink]="route.path">{{ route.label }}</a>
+      </li>
+    </ul>
+  </ng-template>
+</nav>

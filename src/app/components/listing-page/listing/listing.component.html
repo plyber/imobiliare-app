@@ -1,0 +1,20 @@
+<div [ngClass]="isMobile ? 'mobile-listing': 'desktop-listing'" class="listing">
+  <div class="wrapper">
+    <img [src]="estate.url" alt="">
+  </div>
+  <div class="content">
+    <div class="title">
+      <h3>{{estate.name}}</h3>
+      <div class="stars">★★★★☆</div>
+    </div>
+    <div class="details">
+      <p>{{estate.sqm}}m<sup>2</sup></p>
+      <p>{{estate.rooms}} rooms</p>
+      <p> {{estate.bathrooms}} bathrooms</p>
+    </div>
+    <hr>
+    <div class="description">
+      <p>{{estate.description}}</p>
+    </div>
+  </div>
+</div>
