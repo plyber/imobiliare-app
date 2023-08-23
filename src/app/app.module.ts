@@ -7,9 +7,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home-page/home-page.component';
 import { AboutComponent } from './components/about-page/about-page.component';
 import { ContactComponent } from './components/contact-page/contact-page.component';
-import { ListingsComponent } from './components/listing-page/listing-page.component';
+import { ListingsComponent } from './components/listing-page/listings.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ListingComponent } from './components/listing-page/listing/listing.component';
+import { ListingPageComponent } from './components/listing-page/listing-page/listing-page.component';
+import { CreateListingComponent } from './components/listing-page/create-listing/create-listing.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import { ListingComponent } from './components/listing-page/listing/listing.comp
     AboutComponent,
     ContactComponent,
     ListingsComponent,
-    ListingComponent
+    ListingComponent,
+    ListingPageComponent,
+    CreateListingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

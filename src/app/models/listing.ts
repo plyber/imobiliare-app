@@ -1,6 +1,7 @@
 export interface Listing {
   id: number;
-  name: string;
+  type: string;
+  title: string;
   stars:number;
   description: string;
   sqm: number;

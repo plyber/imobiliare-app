@@ -1,0 +1,31 @@
+<div *ngIf="!listing">
+    <p>No listing found.</p>
+</div>
+<ng-template [ngIf]="listing">
+    <div class="listing-page">
+        <div [ngClass]="isMobile ? 'mobile-listing': 'desktop-listing'" class="listing">
+            <div class="wrapper">
+                <img [src]="listing.url" alt="">
+            </div>
+            <div class="content">
+                <div class="title">
+                    <h3>{{listing.title}}</h3>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="details">
+                    <p>{{listing.sqm}}m<sup>2</sup></p>
+                    <p>{{listing.rooms}} rooms</p>
+                    <p> {{listing.bathrooms}} bathrooms</p>
+                </div>
+                <hr>
+                <div class="description">
+                    <p>{{listing.description}}</p>
+                </div>
+            </div>
+            <div class="buttons">
+                <button>Save</button>
+                <button>Contact</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

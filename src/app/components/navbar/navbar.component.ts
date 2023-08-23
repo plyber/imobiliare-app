@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {ScreenSizeService} from "../../services/screen-size.service";
-import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -23,7 +22,7 @@ export class NavbarComponent {
 
   navLinks = [
     { label: 'Home', path: '/' },
-    { label: 'Listing', path: '/listings' },
+    { label: 'Listings', path: '/listings' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
   ];

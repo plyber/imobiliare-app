@@ -1,0 +1,44 @@
+<form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+
+  <label for="title">Title:</label>
+  <input autocomplete="off" id="title" minlength="4" name="title" ngModel required type="text">
+
+  <label style="text-transform: capitalize;">Type: {{form.value.type}}</label>
+  <div class="types-section">
+    <div (click)="form.value['type'] = type"
+         *ngFor="let type of propertyTypes"
+         [ngClass]="{'selected': form.value.type === type}"
+         class="property-type-box">
+      {{type}}
+    </div>
+  </div>
+  <label for="description">Description:</label>
+  <textarea autocomplete="off" id="description" minlength="12" name="description" ngModel required></textarea>
+
+  <label for="sqm">Square Meters:</label>
+  <input autocomplete="off" id="sqm" name="sqm" ngModel required type="number">
+
+  <label for="rooms">Rooms:</label>
+  <input autocomplete="off" id="rooms" name="rooms" ngModel required type="number">
+
+  <label for="bathrooms">Bathrooms:</label>
+  <input autocomplete="off" id="bathrooms" name="bathrooms" ngModel required type="number">
+
+  <label for="city">City:</label>
+  <input autocomplete="off" id="city" name="city" ngModel required type="text">
+
+  <label for="state">State:</label>
+  <input autocomplete="off" id="state" name="state" ngModel required type="text">
+
+  <div class="upload-section">
+    <span>Image URL:</span>
+    <input autocomplete="off" id="url" name="url" ngModel required type="text">
+  </div>
+  <button
+    [disabled]="!form.valid"
+    [ngClass]="{'disabled': !form.valid}"
+    type="submit">
+    Create
+  </button>
+  <button (click)="testFill()" type="button">Autofill</button>
+</form>
