@@ -10,9 +10,16 @@ import { ContactComponent } from './components/contact-page/contact-page.compone
 import { ListingsComponent } from './components/listing-page/listings.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ListingComponent } from './components/listing-page/listing/listing.component';
-import { ListingPageComponent } from './components/listing-page/listing-page/listing-page.component';
+import { ListingPageComponent } from './components/listing-page/listing-details/listing-page.component';
 import { CreateListingComponent } from './components/listing-page/create-listing/create-listing.component';
 import {FormsModule} from "@angular/forms";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import {AngularFireModule} from "@angular/fire/compat";
+import { SignInComponent } from './components/auth-components/sign-in/sign-in.component';
+import { RegisterUserComponent } from './components/auth-components/register-user/register-user.component';
+import { IconComponent } from './shared/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +31,20 @@ import {FormsModule} from "@angular/forms";
     ListingsComponent,
     ListingComponent,
     ListingPageComponent,
-    CreateListingComponent
+    CreateListingComponent,
+    SignInComponent,
+    RegisterUserComponent,
+    IconComponent,
+    IconComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Listing} from "../../models/listing";
-import {ListingService} from "../../services/listing.service";
+import {DataStorageService} from "../../services/data-storage.service";
 
 @Component({
   selector: 'app-listing-page',
@@ -11,12 +11,14 @@ export class ListingsComponent implements OnInit {
 
   estateList: Listing[] = [];
 
-  constructor(private listingService: ListingService) {
+  constructor(private dataStorageService: DataStorageService) {
   }
 
   ngOnInit() {
-    this.estateList = this.listingService.getListings()
+    this.dataStorageService.getListings().subscribe(listings=>{
+      this.estateList=listings.reverse();
+    })
+
+
   }
-
-
 }

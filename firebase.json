@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "imobiliare-app",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "imobiliare-app": {
+      "hosting": {
+        "imobiliare-app": [
+          "imobiliare-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "imobiliare-app"
+  }
+}

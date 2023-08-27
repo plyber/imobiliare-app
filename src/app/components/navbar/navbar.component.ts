@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {ScreenSizeService} from "../../services/screen-size.service";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -8,31 +7,21 @@ import {ScreenSizeService} from "../../services/screen-size.service";
 })
 export class NavbarComponent {
 
-  constructor(
-    private screenSizeService: ScreenSizeService,
-    //private router: Router
-    )
-  {
-  // router.events.subscribe((event)=>{
-  //   if(event instanceof NavigationEnd){
-  //     this.isMenuOpen=false;
-  //   }
-  // })
-  }
-
   navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'Listings', path: '/listings' },
-    { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' },
+    {label: 'Home', path: '/'},
+    {label: 'Listings', path: '/listings'},
+    {label: 'About', path: '/about'},
+    {label: 'Contact', path: '/contact'},
   ];
   isMenuOpen = false;
+
+  constructor() {
+
+  }
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  get isMobile(){
-    return this.screenSizeService.isMobile;
-  }
 
 }

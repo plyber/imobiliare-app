@@ -1,4 +1,5 @@
 export interface Listing {
+  authorId: string;
   id: number;
   type: string;
   title: string;

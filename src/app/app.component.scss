@@ -1,0 +1,51 @@
+@mixin input-styling {
+  display: flex;
+  padding: 8px;
+  border: 1px solid lightgrey;
+  //border-radius: 4px;
+  margin-top: 4px;
+  &.ng-invalid.ng-touched {
+    border-left: 4px solid firebrick;
+  }
+
+  &.ng-valid {
+    border-left: 4px solid darkgreen;
+  }
+}
+
+@mixin form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 400px;
+  label {
+    margin-top: 10px;
+  }
+}
+
+@mixin button-styling {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: none;
+  font-size: large;
+  border: 1px solid brown;
+  color: brown;
+  //border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover:not(.disabled) {
+    background-color: brown;
+    color: white;
+    border-color: brown;
+  }
+
+  &.disabled {
+    cursor: initial;
+    border-color: lightgrey;
+    color:lightgrey;
+  }
+}
+
+
+

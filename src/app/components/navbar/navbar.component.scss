@@ -11,6 +11,15 @@ nav {
   height: 50px;
 }
 
+.account-icon {
+  background-color: white;
+  width:2rem;
+  margin:0 0.5rem;
+  &:hover {
+    background-color: red;
+  }
+}
+
 .logo {
   margin-left: 1rem;
   display: flex;
@@ -19,6 +28,7 @@ nav {
   background: none;
   color: black;
   text-decoration: none;
+
   &:hover {
     color: white;
   }
@@ -49,14 +59,13 @@ nav {
 
 .search-bar {
   display: flex;
-  width: 33%;
+  width: 40%;
+  margin: 0 1rem;
 }
 
 input[type=text] {
   color: white;
   height: 1.5rem;
-  margin-right: 0.5rem;
-  padding-left: 0.5rem;
   width: 100%;
   transition: 0.5s;
   outline: none;
@@ -111,9 +120,17 @@ input[type=text] {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 5;
   }
+  .account-icon {
+    background-color: white;
+    min-width:2rem;
+    &:hover {
+      background-color: red;
+    }
+  }
 
   .search-bar {
     width: 50%;
+    margin: 0 0 0 1rem;
   }
 
   .menu-button {

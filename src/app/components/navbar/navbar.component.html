@@ -10,6 +10,10 @@
   <div class="search-bar">
     <input placeholder="search" type="text">
   </div>
+  <app-custom-icon
+    [path]="'account.svg'"
+    class="account-icon" routerLink="/account">
+  </app-custom-icon>
   <div (click)="toggleMenu()" class="menu-button">
     <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
   </div>
@@ -20,8 +24,10 @@
         <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
       </li>
       <li (click)="isMenuOpen=false" *ngFor="let route of navLinks">
-        <a  [routerLink]="route.path">{{ route.label }}</a>
+        <a [routerLink]="route.path">{{ route.label }}</a>
       </li>
     </ul>
   </ng-template>
 </nav>
+
+

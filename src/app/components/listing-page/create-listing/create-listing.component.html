@@ -1,5 +1,4 @@
 <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
-
   <label for="title">Title:</label>
   <input autocomplete="off" id="title" minlength="4" name="title" ngModel required type="text">
 
@@ -8,7 +7,8 @@
     <div (click)="form.value['type'] = type"
          *ngFor="let type of propertyTypes"
          [ngClass]="{'selected': form.value.type === type}"
-         class="property-type-box">
+         class="property-type-box"
+         style="text-transform: capitalize">
       {{type}}
     </div>
   </div>

@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+    <form #form="ngForm" (ngSubmit)="signIn()" class="sign-in">
+        <label for="email">Email:</label>
+        <input [(ngModel)]="email" id="email" name="email" ngModel placeholder="Email" email required type="email"/>
+        <label for="email">Password:</label>
+        <input [(ngModel)]="password" id="password" name="password" ngModel placeholder="Password" required minlength="5"
+               type="password"/>
+        <div class="button-section">
+            <button (click)="signIn()" [disabled]="!form.valid"
+                    [ngClass]="{'disabled': !form.valid}" class="log-in" type="button">Log In
+            </button>
+            <button (click)="signUp()" class="register" type="button">Register</button>
+        </div>
+    </form>
+</div>
+
