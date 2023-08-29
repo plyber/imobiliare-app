@@ -8,20 +8,32 @@
     </li>
   </ul>
   <div class="search-bar">
-    <input placeholder="search" type="text">
+    <input placeholder="Search" type="text">
   </div>
-  <app-custom-icon
-    [path]="'account.svg'"
-    class="account-icon" routerLink="/account">
-  </app-custom-icon>
-  <div (click)="toggleMenu()" class="menu-button">
-    <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
+  <div class="options-section">
+    <div class="option-button">
+      <app-custom-icon
+        [path]="'account.svg'"
+        class="icon" routerLink="/account">
+      </app-custom-icon>
+    </div>
+    <div class="mobile-menu-button">
+      <div (click)="toggleMenu()" class="option-button">
+        <app-custom-icon
+          [path]="'menu.svg'"
+          class="icon" routerLink="/account">
+        </app-custom-icon>
+      </div>
+    </div>
   </div>
   <ng-template [ngIf]="isMenuOpen">
     <div (click)="isMenuOpen=false" id="overlay"></div>
     <ul [ngClass]="{'mobile-menu':isMenuOpen}" class="nav-links">
-      <li (click)="toggleMenu()" class="menu-button">
-        <span class="menu-icon">{{isMenuOpen ? "CLOSE" : "OPEN"}}</span>
+      <li (click)="toggleMenu()" class="option-button">
+        <app-custom-icon
+          [path]="'menu.svg'"
+          class="icon" routerLink="/account">
+        </app-custom-icon>
       </li>
       <li (click)="isMenuOpen=false" *ngFor="let route of navLinks">
         <a [routerLink]="route.path">{{ route.label }}</a>
