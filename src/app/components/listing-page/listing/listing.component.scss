@@ -3,13 +3,14 @@
   height: 35rem;
   display: flex;
   flex-direction: column;
-  background-color: rgb(223,223,223);
+  background-color: white;
   border-radius: 4px;
-  border: 1px solid rgb(210,210,210);;
+  outline: 1px solid rgb(210,210,210);
+  transition: outline-color 0.2s;
   overflow: hidden;
   &:hover{
-    border-color: brown;
-    background-color: rgb(233,233,233);
+    outline-color: brown;
+    outline-width: 2px;
     cursor: pointer;
   }
   .wrapper {

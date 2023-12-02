@@ -2,18 +2,35 @@
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
-    <form #form="ngForm" (ngSubmit)="signIn()" class="sign-in">
-        <label for="email">Email:</label>
-        <input [(ngModel)]="email" id="email" name="email" ngModel placeholder="Email" email required type="email"/>
-        <label for="email">Password:</label>
-        <input [(ngModel)]="password" id="password" name="password" ngModel placeholder="Password" required minlength="5"
-               type="password"/>
-        <div class="button-section">
-            <button (click)="signIn()" [disabled]="!form.valid"
-                    [ngClass]="{'disabled': !form.valid}" class="log-in" type="button">Log In
-            </button>
-            <button (click)="signUp()" class="register" type="button">Register</button>
-        </div>
-    </form>
+  <form #form="ngForm" (ngSubmit)="signIn()" class="sign-in">
+    <ng-container *ngIf="!this.logging">
+      <label for="displayName">Display Name:</label>
+      <input [(ngModel)]="user.displayName" id="displayName" name="displayName" ngModel placeholder="Display" required minlength="5" maxlength="20"
+             type="text"/>
+
+      <label for="photoURL">Photo URL:</label>
+      <input [(ngModel)]="user.photoURL" id="photoURL" name="photoURL" ngModel placeholder="Photo URL" required
+             type="text"/>
+    </ng-container>
+    <label for="email">Email:</label>
+    <input [(ngModel)]="user.email" email id="email" name="email" ngModel placeholder="Email" required type="email"/>
+
+    <label for="password">Password:</label>
+    <input [(ngModel)]="password" id="password" minlength="5" name="password" ngModel placeholder="Password" required
+           type="password"/>
+
+    <ng-container *ngIf="!this.logging">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input [(ngModel)]="confirmPassword" id="confirmPassword" minlength="5" name="confirmPassword" placeholder="Confirm Password"
+             required type="password">
+    </ng-container>
+
+    <div class="button-section">
+      <button (click)="this.logging ? signIn() : signUp()" [disabled]="!form.valid" [ngClass]="{'disabled': !form.valid}" class="log-in"
+              type="button">{{ logging == false ? 'Register' : 'Log In' }}
+      </button>
+      <button (click)="this.logging=!logging; this.errorMessage=null" type="button">{{ logging == true ? 'Register' : 'Log In' }}</button>
+    </div>
+  </form>
 </div>
 

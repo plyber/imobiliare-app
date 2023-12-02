@@ -5,6 +5,5 @@ export interface User {
   email: string;
   displayName: string;
   photoURL: string;
-  emailVerified: boolean;
-  posts: Listing[];
+  posts:Listing[];
 }

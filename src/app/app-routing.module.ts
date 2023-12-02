@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'listings/:id', component: ListingPageComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'account', component: SignInComponent}
+  {path: 'login', component: SignInComponent},
 ]
 
 @NgModule({

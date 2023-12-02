@@ -18,8 +18,8 @@ import { environment } from '../environments/environment';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import {AngularFireModule} from "@angular/fire/compat";
 import { SignInComponent } from './components/auth-components/sign-in/sign-in.component';
-import { RegisterUserComponent } from './components/auth-components/register-user/register-user.component';
 import { IconComponent } from './shared/icon/icon.component';
+import { DashboardComponent } from './components/auth-components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +33,9 @@ import { IconComponent } from './shared/icon/icon.component';
     ListingPageComponent,
     CreateListingComponent,
     SignInComponent,
-    RegisterUserComponent,
     IconComponent,
     IconComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
